@@ -868,6 +868,43 @@ export interface ApiSkillSkill extends Schema.CollectionType {
   };
 }
 
+export interface ApiUserInfoUserInfo extends Schema.SingleType {
+  collectionName: 'user_infos';
+  info: {
+    singularName: 'user-info';
+    pluralName: 'user-infos';
+    displayName: 'User Info';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    introduction: Attribute.Text;
+    aboutMe: Attribute.Text;
+    avatar: Attribute.Media;
+    stickerAvatar: Attribute.Media;
+    github: Attribute.String;
+    linkedin: Attribute.String;
+    telegram: Attribute.String;
+    tiktok: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::user-info.user-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::user-info.user-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiUserInformationUserInformation
   extends Schema.CollectionType {
   collectionName: 'user_informations';
@@ -928,6 +965,7 @@ declare module '@strapi/types' {
       'api::experience.experience': ApiExperienceExperience;
       'api::project.project': ApiProjectProject;
       'api::skill.skill': ApiSkillSkill;
+      'api::user-info.user-info': ApiUserInfoUserInfo;
       'api::user-information.user-information': ApiUserInformationUserInformation;
     }
   }
