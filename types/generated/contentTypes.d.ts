@@ -874,6 +874,7 @@ export interface ApiUserInfoUserInfo extends Schema.SingleType {
     singularName: 'user-info';
     pluralName: 'user-infos';
     displayName: 'User Info';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -887,6 +888,8 @@ export interface ApiUserInfoUserInfo extends Schema.SingleType {
     linkedin: Attribute.String;
     telegram: Attribute.String;
     tiktok: Attribute.String;
+    email: Attribute.String;
+    phone: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

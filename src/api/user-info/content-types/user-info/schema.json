@@ -4,7 +4,8 @@
   "info": {
     "singularName": "user-info",
     "pluralName": "user-infos",
-    "displayName": "User Info"
+    "displayName": "User Info",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,24 +19,26 @@
       "type": "text"
     },
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "stickerAvatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "github": {
       "type": "string"
@@ -47,6 +50,12 @@
       "type": "string"
     },
     "tiktok": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
       "type": "string"
     }
   }
